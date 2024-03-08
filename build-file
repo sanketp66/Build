@@ -1,14 +1,12 @@
-pipeline {
-    agent any
-
-    stages {
-        stage('Deploy') {
+stage('Build') {
             steps {
                 script {
-                    // Deployment commands
-                    sh 'echo "Deployment started"'
-                    sh 'scp target/myapp.war user@server:/path/to/deployment'
-                    sh 'echo "Deployment completed"'
+                    // Build commands
+                    sh 'echo "Building started"'
+                    sh 'bash build_script.sh'  // Example build script
+                    sh 'echo "Building completed"'
                 }
             }
         }
+    }
+}
